@@ -21,7 +21,7 @@ run:
 	.venv/bin/python main.py
 
 analyze:
-	PYTHONPATH=scripts .venv/bin/python scripts/generate_md.py
+	PYTHONPATH=scripts .venv/bin/python generate_md.py
 	@if [ -n "$$(git status --porcelain)" ]; then \
 		git config --local user.email "action@github.com"; \
 		git config --local user.name "GitHub Action"; \
