@@ -49,6 +49,10 @@ cd arko_individual_project_1
 As we can see. polars tends to run quicker than its equivalent implementation in pandas.
 
 
+## 4. YT video link
+https://youtu.be/TTSH6CPpNzY
+
+
 
 
 
