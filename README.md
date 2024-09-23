@@ -11,7 +11,7 @@ This project is to demonstrate how to perform statistical analysis using pandas 
 - A `.ipynb` notebook each for polars and pandas analysis
 - A `.py` script to calculate the runtimes of each of these notebooks
 - A `lib` folder with `helper.py` script to host helper function.
-![image](https://github.com/user-attachments/assets/e1c744a5-6d48-40a9-b0ba-59b5a72f85a0)
+![image](https://github.com/user-attachments/assets/14b9ebb9-3710-4051-ac0b-1d923c89b8d3)
 
 
 ## Project Structure
