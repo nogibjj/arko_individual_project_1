@@ -3,14 +3,14 @@
 [![Lint](https://github.com/nogibjj/arko_individual_project_1/actions/workflows/lint.yml/badge.svg)](https://github.com/nogibjj/arko_individual_project_1/actions/workflows/lint.yml)
 [![Test](https://github.com/nogibjj/arko_individual_project_1/actions/workflows/test.yml/badge.svg)](https://github.com/nogibjj/arko_individual_project_1/actions/workflows/test.yml)
 
-# Python Template
+# Descriptive Statistics and Runtime Comparison using Polars and Pandas
 
-This project is to demonstrate how to create a standard scaffolding along with dockerizing the project and setting up a CI/CD process.
+This project is to demonstrate how to perform statistical analysis using pandas and polars. We then compare runtimes of both the approaches.
 
 ## Project Function
-- Add two 'numpy' arrays and store it in a third array
-- Create a 'pandas' dataframe to store the aforementioned arrays
-- Convert the dataframe to a '.csv' file.
+- A `.ipynb` notebook each for polars and pandas analysis
+- A `.py` script to calculate the runtimes of each of these notebooks
+- A `lib` folder with `helper.py` script to host helper function.
 ![image](https://github.com/user-attachments/assets/e1c744a5-6d48-40a9-b0ba-59b5a72f85a0)
 
 
@@ -29,29 +29,25 @@ This project is to demonstrate how to create a standard scaffolding along with d
 Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/nogibjj/arko_bhattacharya_week1.git
-cd arko_bhattacharya_week1
+git clone https://github.com/nogibjj/arko_individual_project_1.git
+cd arko_individual_project_1
 ```
-![image](https://github.com/user-attachments/assets/6f4c2022-de01-4bb1-953e-3e5abd962457)
 
-
-### 2. Dockerize
-
-Build and Run the Docker image:
+### 2. Run notebooks (plots saved to `plots` subfolder)
 
 ```bash
-docker build -f .devcontainer/Dockerfile -t <image-name> .
-docker run -it --rm -v $(pwd):/app <image-name> /bin/sh
+.venv/bin/python rdu_weather_analytics_pandas.ipynb
+.venv/bin/python rdu_weather_analytics_pandas.ipynb
 ```
-![image](https://github.com/user-attachments/assets/c608288f-93a9-413c-89aa-b2541d4e9baf)
+![image](https://github.com/user-attachments/assets/f31f7760-baff-4d1b-a77e-a70596355295)
 
-## GitHub CI/CD Setup
-- `.github/workflows/`: Contians CI/CD workflows for GitHub, which triggers when pushing code to the GitHub repo.
 
-[![Run Tests](https://github.com/nogibjj/arko_bhattacharya_week1/actions/workflows/test.yml/badge.svg)](https://github.com/nogibjj/arko_bhattacharya_week1/actions/workflows/test.yml)
+## 3. Run `main.py` script to see runtime results of both notebooks
 
-![image](https://github.com/user-attachments/assets/bb697bc9-6578-48d6-872c-d2087a443e66)
-  
+![image](https://github.com/user-attachments/assets/7f7cd744-0ce0-42b4-9839-ae67f3f8e4be)
+
+As we can see. polars tends to run quicker than its equivalent implementation in pandas.
+
 
 
 
