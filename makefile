@@ -12,7 +12,7 @@ lint:
 	.venv/bin/ruff lib/*.py test*.py main.py
 
 test-notebook:
-	.venv/bin/pytest --nbval rdu-weather*.ipynb
+	.venv/bin/pytest --nbval *.ipynb
 
 test:
 	.venv/bin/python test*.py
