@@ -29,4 +29,22 @@ jobs:
     
     - name: Run tests
       run: |
-        make format lint test
+        make format lint test-notebook test
+
+    - name: Run data analysis
+      run: |
+        venv/bin/python scripts/generate_md.py
+
+    - name: Commit and push report.md
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add report.md
+        git commit -m "Add generated Markdown report"
+        git push
+
+    - name: Upload report as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: data-report
+        path: report.md

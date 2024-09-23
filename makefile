@@ -1,27 +1,36 @@
-PYTHON=python
-PIP=pip
-VENV=venv
-SRC=src
-TEST=tests
-FORMAT=black
-LINT=pylint
-
 venv:
-	$(PYTHON) -m venv $(VENV)
+	python -m venv .venv
 
 install: venv
-	$(VENV)/bin/$(PIP) install --upgrade $(PIP)
-	$(VENV)/bin/$(PIP) install -r requirements.txt
+	.venv/bin/pip install --upgrade pip
+	.venv/bin/pip install -r requirements.txt
 
 format:
-	$(VENV)/bin/$(FORMAT) $(SRC)/*.py
+	.venv/bin/black lib/*.py test*.py main.py
 
 lint:
-	$(VENV)/bin/$(LINT) $(SRC)/*.py
-	
+	.venv/bin/ruff lib/*.py test*.py main.py
+
+test-notebook:
+	.venv/bin/pytest --nbval *.ipynb
 
 test:
-	PYTHONPATH=$(SRC) $(VENV)/bin/$(PYTHON) -m unittest discover -s $(SRC)/$(TEST) -v
+	.venv/bin/python test*.py
 
 run:
-	PYTHONPATH=$(SRC) $(VENV)/bin/$(PYTHON) $(SRC)/main.py
+	.venv/bin/python main.py
+
+analyze:
+	PYTHONPATH=scripts .venv/bin/python scripts/generate_md.py
+	@if [ -n "$$(git status --porcelain)" ]; then \
+		git config --local user.email "action@github.com"; \
+		git config --local user.name "GitHub Action"; \
+		if [ -f images/plot.png ]; then git add images/plot.png; fi; \
+		if [ -f Data_summary.md ]; then git add Data_summary.md; fi; \
+		git commit -m "Add generated plot and report"; \
+		git push; \
+	else \
+		echo "No changes to commit. Skipping commit and push."; \
+	fi
+
+
