@@ -1,3 +1,8 @@
+[![Install](https://github.com/nogibjj/arko_individual_project_1/actions/workflows/install.yml/badge.svg)](https://github.com/nogibjj/arko_individual_project_1/actions/workflows/install.yml)
+[![Format](https://github.com/nogibjj/arko_individual_project_1/actions/workflows/format.yml/badge.svg)](https://github.com/nogibjj/arko_individual_project_1/actions/workflows/format.yml)
+[![Lint](https://github.com/nogibjj/arko_individual_project_1/actions/workflows/lint.yml/badge.svg)](https://github.com/nogibjj/arko_individual_project_1/actions/workflows/lint.yml)
+[![Test](https://github.com/nogibjj/arko_individual_project_1/actions/workflows/test.yml/badge.svg)](https://github.com/nogibjj/arko_individual_project_1/actions/workflows/test.yml)
+
 # Python Template
 
 This project is to demonstrate how to create a standard scaffolding along with dockerizing the project and setting up a CI/CD process.
