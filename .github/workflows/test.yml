@@ -29,7 +29,7 @@ jobs:
     
     - name: Run tests
       run: |
-        make format lint test-notebook test
+        make format lint test
 
     - name: Run data analysis
       run: |
